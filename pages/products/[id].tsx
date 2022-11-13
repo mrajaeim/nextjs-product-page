@@ -6,6 +6,7 @@ import {Product} from "../../interfaces";
 import ShareBtn from "../../components/atomic/ShareBtn";
 import CopyLinkBtn from "../../components/atomic/CopyLinkBtn";
 import useLocation from "../../hooks/useLocation";
+import ProductRate from "../../components/product/ProductRate";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
@@ -15,6 +16,9 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
         </div>
         <div>
             <CopyLinkBtn/>
+        </div>
+        <div>
+            <ProductRate rate={product?.rating?.rate} count={product?.rating?.count}/>
         </div>
     </>
 }
