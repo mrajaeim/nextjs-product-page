@@ -12,24 +12,16 @@ import AddToCart from "../../components/product/AddToCart";
 import ProductOption from "../../components/product/ProductOption";
 import ProductOptionsWrapper from "../../components/product/ProductOptionsWrapper";
 import ColorPicker from "../../components/product/ProductColor";
+import ProductImage from "../../components/product/ProductImage";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
     return <>
         <div className={"min-h-screen flex justify-center items-center content-center bg-[#f6f6f6] py-12"}>
             <div
-                className={"product flex content-center w-11/12 bg-white rounded-2xl overflow-hidden flex-wrap shadow-[0_0_20px_0_#e3e3e3]"}>
-                <div
-                    className={"product-image w-full md:w-1/3 p-10 bg-amber-200 h-auto flex flex-wrap justify-center items-center content-center"}>
-                    <Image
-                        alt={product.title}
-                        src={product.image}
-                        className={"mix-blend-darken"}
-                        layout={'responsive'}
-                        height={300} width={300}
-                    />
-                    <span className={"product-image-shadow"}/>
-                </div>
+                className={"product flex content-center w-11/12 bg-white rounded-2xl overflow-hidden flex-wrap shadow-[0_0_20px_0_#e3e3e3]"}
+            >
+                <ProductImage product={product}/>
                 {/*end of image*/}
                 <div className={"product-detail w-full md:w-2/3 lg:p-12 md:p-10 p-8"}>
                     <header>
