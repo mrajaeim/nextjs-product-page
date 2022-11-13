@@ -1,0 +1,1 @@
+export const FAKE_STORE_API = (id: number) => `https://fakestoreapi.com/products/${id}`
