@@ -11,6 +11,7 @@ import ProductRate from "../../components/product/ProductRate";
 import AddToCart from "../../components/product/AddToCart";
 import ProductOption from "../../components/product/ProductOption";
 import ProductOptionsWrapper from "../../components/product/ProductOptionsWrapper";
+import ColorPicker from "../../components/product/ProductColor";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
@@ -67,7 +68,12 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                         </p>
                         <div className={"product-options"}>
                             <ProductOptionsWrapper>
-                                <ProductOption title={"COLOR"} className={"mb-4 w-full sm:w-full lg:w-1/3"}/>
+                                <ProductOption title={"COLOR"} className={"mb-4 w-full sm:w-full lg:w-1/3"}>
+                                    <ColorPicker color={"#58E8C7"}/>
+                                    <ColorPicker color={"#FFEE72"}/>
+                                    <ColorPicker color={"#6655AF"}/>
+                                    <ColorPicker color={"#DEDEDE"}/>
+                                </ProductOption>
                                 <ProductOption title={"SIZE"} className={"mb-4 w-full sm:w-1/2 lg:w-1/3 lg:pl-4"}/>
                                 <ProductOption title={"QTY"} className={"mb-4 w-full sm:w-1/2 sm:pl-4 lg:w-1/3"}/>
                             </ProductOptionsWrapper>

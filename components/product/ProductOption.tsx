@@ -11,7 +11,7 @@ const ProductOption: React.FC<React.PropsWithChildren<{ title: string, className
         <h3 className={"text-secondary text-sm font-semibold m-0"}>
             {title}
         </h3>
-        <div>
+        <div className={"py-2 flex justify-start items-center"}>
             {children}
         </div>
     </div>
