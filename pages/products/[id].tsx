@@ -4,7 +4,6 @@ import axios from "axios";
 import {FAKE_STORE_API} from "../../config";
 import {Product} from "../../interfaces";
 import useLocation from "../../hooks/useLocation";
-import Image from 'next/image'
 import ShareBtn from "../../components/atomic/ShareBtn";
 import CopyLinkBtn from "../../components/atomic/CopyLinkBtn";
 import ProductRate from "../../components/product/ProductRate";
@@ -13,9 +12,11 @@ import ProductOption from "../../components/product/ProductOption";
 import ProductOptionsWrapper from "../../components/product/ProductOptionsWrapper";
 import ColorPicker from "../../components/product/ProductColor";
 import ProductImage from "../../components/product/ProductImage";
+import useColorPicker from "../../zustands/useColorPicker";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
+    const productColors = useColorPicker(state => state.colors);
     return <>
         <div className={"min-h-screen flex justify-center items-center content-center bg-[#f6f6f6] py-12"}>
             <div
@@ -61,10 +62,7 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                         <div className={"product-options"}>
                             <ProductOptionsWrapper>
                                 <ProductOption title={"COLOR"} className={"mb-4 w-full sm:w-full lg:w-1/3"}>
-                                    <ColorPicker color={"#58E8C7"}/>
-                                    <ColorPicker color={"#FFEE72"}/>
-                                    <ColorPicker color={"#6655AF"}/>
-                                    <ColorPicker color={"#DEDEDE"}/>
+                                    {productColors.map((color, index) => <ColorPicker color={color} key={index}/>)}
                                 </ProductOption>
                                 <ProductOption title={"SIZE"} className={"mb-4 w-full sm:w-1/2 lg:w-1/3 lg:pl-4"}/>
                                 <ProductOption title={"QTY"} className={"mb-4 w-full sm:w-1/2 sm:pl-4 lg:w-1/3"}/>

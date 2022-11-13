@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductOption: React.FC<React.PropsWithChildren<{ title: string, className?: string }>> = (
+const ProductOption: React.FC<React.PropsWithChildren<{ title?: string, className?: string }>> = (
     {
         title,
         children,
@@ -8,9 +8,9 @@ const ProductOption: React.FC<React.PropsWithChildren<{ title: string, className
     }
 ) => {
     return <div className={"inline-block " + className}>
-        <h3 className={"text-secondary text-sm font-semibold m-0"}>
+        {title ? <h3 className={"text-secondary text-sm font-semibold m-0"}>
             {title}
-        </h3>
+        </h3> : null}
         <div className={"py-2 flex justify-start items-center"}>
             {children}
         </div>

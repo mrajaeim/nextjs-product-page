@@ -80,6 +80,12 @@ a {
 .product-image {
   position: relative;
   overflow: hidden;
+  @media screen and (min-width: 768px) {
+    > img {
+      max-height: 60vh;
+    }
+  }
+
   .product-image-shadow {
     display: block;
     width: 100%;
@@ -91,13 +97,13 @@ a {
   }
 }
 
-.product-options-wrapper{
-  @media screen and (min-width:640px){
+.product-options-wrapper {
+  @media screen and (min-width: 640px) {
     > .sm\:w-1\/2:not(:last-child) {
       border-right: 1px solid rgba(0, 0, 0, 0.15);
     }
   }
-  @media screen and (min-width:1024px){
+  @media screen and (min-width: 1024px) {
     > *:not(:last-child) {
       border-right: 1px solid rgba(0, 0, 0, 0.15);
     }
