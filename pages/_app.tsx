@@ -15,8 +15,6 @@ export default function App({Component, pageProps}: AppProps) {
             />
             <link rel="icon" href="https://hs3-cf.behtarino.com/static/images/behtarino-web/behtarino-logo.png" />
             <link rel="apple-touch-icon" href="/Assets/pwa/apple-touch-icon.png" />
-            <meta name="msapplication-TileColor" content="#0F197D" />
-            <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         </Head>
         <Component {...pageProps} />
     </>
