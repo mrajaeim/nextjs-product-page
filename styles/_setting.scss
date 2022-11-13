@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 a {
@@ -22,4 +22,41 @@ a {
     color: white;
     background: black;
   }
+}
+
+.ellipsis-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  max-height: 2.5em;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+}
+
+.clamp1 {
+  max-height: 1.5em;
+  -webkit-line-clamp: 1;
+}
+
+.clamp2 {
+  max-height: 2.5em;
+  -webkit-line-clamp: 2;
+}
+
+.clamp3 {
+  max-height: 3.7em;
+  -webkit-line-clamp: 3;
+}
+
+.rc-rate-star-half:hover .rc-rate-star-first,
+.rc-rate-star-full:hover .rc-rate-star-second{
+  color: #ff1d47;
+  transform: scale(1.2);
+}
+.rc-rate-star-half .rc-rate-star-first,
+.rc-rate-star-full .rc-rate-star-second{
+  color: #fb4466;
+  transition: all .3s;
+  cursor: pointer;
 }
