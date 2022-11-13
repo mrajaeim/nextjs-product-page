@@ -3,16 +3,20 @@ import {GetServerSideProps} from "next";
 import axios from "axios";
 import {FAKE_STORE_API} from "../../config";
 import {Product} from "../../interfaces";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import Tooltip from "rc-tooltip";
+import ShareBtn from "../../components/atomic/ShareBtn";
+import CopyLinkBtn from "../../components/atomic/CopyLinkBtn";
+import useLocation from "../../hooks/useLocation";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
-    return <CopyToClipboard text={product.title}
-                            onCopy={() => navigator.share({url: location.href, text: product.title})}>
-        <Tooltip placement="left" trigger={['hover']} overlay={<span>copied!</span>}>
-            <a href="#">hover</a>
-        </Tooltip>
-    </CopyToClipboard>
+    const location = useLocation();
+    return <>
+        <div>
+            <ShareBtn title={product.title} url={location?.href || ""}/>
+        </div>
+        <div>
+            <CopyLinkBtn/>
+        </div>
+    </>
 }
 
 export default ProductPage;
