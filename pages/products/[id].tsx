@@ -3,9 +3,16 @@ import {GetServerSideProps} from "next";
 import axios from "axios";
 import {FAKE_STORE_API} from "../../config";
 import {Product} from "../../interfaces";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import Tooltip from "rc-tooltip";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
-    return <>{product.title}</>
+    return <CopyToClipboard text={product.title}
+                            onCopy={() => navigator.share({url: location.href, text: product.title})}>
+        <Tooltip placement="left" trigger={['hover']} overlay={<span>copied!</span>}>
+            <a href="#">hover</a>
+        </Tooltip>
+    </CopyToClipboard>
 }
 
 export default ProductPage;
@@ -13,13 +20,11 @@ export default ProductPage;
 export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         let id = Number(context.query['id']);
-
         // validate id
         if (!(Number.isInteger(id) && !Number.isNaN(id) && id > 0))
             throw "id is not valid"
 
         let {data} = await axios.get(FAKE_STORE_API(id));
-
         // check is data is valid or not
         if (!('title' in data))
             throw "data is not valid";
