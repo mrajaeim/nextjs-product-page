@@ -9,6 +9,8 @@ import ShareBtn from "../../components/atomic/ShareBtn";
 import CopyLinkBtn from "../../components/atomic/CopyLinkBtn";
 import ProductRate from "../../components/product/ProductRate";
 import AddToCart from "../../components/product/AddToCart";
+import ProductOption from "../../components/product/ProductOption";
+import ProductOptionsWrapper from "../../components/product/ProductOptionsWrapper";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
@@ -16,9 +18,16 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
         <div className={"min-h-screen flex justify-center items-center content-center bg-[#f6f6f6] py-12"}>
             <div
                 className={"product flex content-center w-11/12 bg-white rounded-2xl overflow-hidden flex-wrap shadow-[0_0_20px_0_#e3e3e3]"}>
-                <div className={"product-image w-full md:w-1/3 p-12 bg-amber-200 h-auto"}>
-                    <Image alt={product.title} src={product.image} className={"mix-blend-darken"} layout={'responsive'}
-                           height={300} width={300}/>
+                <div
+                    className={"product-image w-full md:w-1/3 p-10 bg-amber-200 h-auto flex flex-wrap justify-center items-center content-center"}>
+                    <Image
+                        alt={product.title}
+                        src={product.image}
+                        className={"mix-blend-darken"}
+                        layout={'responsive'}
+                        height={300} width={300}
+                    />
+                    <span className={"product-image-shadow"}/>
                 </div>
                 {/*end of image*/}
                 <div className={"product-detail w-full md:w-2/3 lg:p-12 md:p-10 p-8"}>
@@ -41,10 +50,10 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                             </p>
                             <p className={"font-semibold mb-2 mt-0 text-xl"}>
                                 <del className={"text-secondary mr-3"}>
-                                    ${product.price + 5}
+                                    ${(product.price + 5).toFixed(2)}
                                 </del>
                                 <span className={"text-primary"}>
-                                    ${product.price}
+                                    ${(product.price).toFixed(2)}
                                 </span>
                             </p>
                         </div>
@@ -56,6 +65,13 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                         <p className={"font-light text-gray-400 ellipsis-text clamp3 text-justify"}>
                             {product.description}
                         </p>
+                        <div className={"product-options"}>
+                            <ProductOptionsWrapper>
+                                <ProductOption title={"COLOR"} className={"mb-4 w-full sm:w-full lg:w-1/3"}/>
+                                <ProductOption title={"SIZE"} className={"mb-4 w-full sm:w-1/2 lg:w-1/3 lg:pl-4"}/>
+                                <ProductOption title={"QTY"} className={"mb-4 w-full sm:w-1/2 sm:pl-4 lg:w-1/3"}/>
+                            </ProductOptionsWrapper>
+                        </div>
                         <div className={"mt-10 flex justify-between"}>
                             <AddToCart/>
                             <div className={"product-share"}>
