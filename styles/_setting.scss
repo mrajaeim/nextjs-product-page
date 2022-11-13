@@ -5,6 +5,10 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
+button, a, h1, h2, h3, h4, h5, h6, span, div, input,del {
+  font-family: 'Oswald', sans-serif;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -50,13 +54,25 @@ a {
 }
 
 .rc-rate-star-half:hover .rc-rate-star-first,
-.rc-rate-star-full:hover .rc-rate-star-second{
+.rc-rate-star-full:hover .rc-rate-star-second {
   color: #ff1d47;
   transform: scale(1.2);
 }
+
 .rc-rate-star-half .rc-rate-star-first,
-.rc-rate-star-full .rc-rate-star-second{
+.rc-rate-star-full .rc-rate-star-second {
   color: #fb4466;
   transition: all .3s;
   cursor: pointer;
+}
+
+.primary-btn{
+  background: #f94467;
+  background: linear-gradient(0deg, #f94467 0%, rgba(255,143,118,1) 94%);
+  box-shadow: 0px 2px 10px 0 #e84c66;
+}
+
+#btnLeft:active {
+  width: 70px;
+  height: 74px;
 }

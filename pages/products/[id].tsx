@@ -8,6 +8,7 @@ import Image from 'next/image'
 import ShareBtn from "../../components/atomic/ShareBtn";
 import CopyLinkBtn from "../../components/atomic/CopyLinkBtn";
 import ProductRate from "../../components/product/ProductRate";
+import AddToCart from "../../components/product/AddToCart";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
@@ -46,14 +47,27 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                                     ${product.price}
                                 </span>
                             </p>
-                            <h2 className={"text-secondary text-sm font-semibold"}>
-                                DESCRIPTION
-                            </h2>
-                            <p className={"text-gray-400 ellipsis-text clamp3 text-justify"}>
-                                {product.description}
-                            </p>
                         </div>
                     </header>
+                    <div className={"product-body"}>
+                        <h2 className={"text-secondary text-sm font-semibold"}>
+                            DESCRIPTION
+                        </h2>
+                        <p className={"font-light text-gray-400 ellipsis-text clamp3 text-justify"}>
+                            {product.description}
+                        </p>
+                        <div className={"mt-10 flex justify-between"}>
+                            <AddToCart/>
+                            <div className={"product-share"}>
+                                <span>
+                                    <ShareBtn url={location?.href || ""} title={product.title}/>
+                                </span>
+                                <span className={"ml-3"}>
+                                    <CopyLinkBtn/>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/*end of product*/}
