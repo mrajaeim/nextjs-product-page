@@ -2,6 +2,7 @@ import '../styles/globals.scss'
 import Head from "next/head";
 import type {AppProps} from 'next/app'
 import NextNProgress from 'nextjs-progressbar';
+import AppProvider from "../provider/AppProvider";
 
 export default function App({Component, pageProps}: AppProps) {
     return <>
@@ -16,6 +17,8 @@ export default function App({Component, pageProps}: AppProps) {
             <link rel="apple-touch-icon" href="/Assets/pwa/apple-touch-icon.png"/>
         </Head>
         <NextNProgress color="#f94467" stopDelayMs={800}/>
-        <Component {...pageProps} />
+        <AppProvider>
+            <Component {...pageProps} />
+        </AppProvider>
     </>
 }
