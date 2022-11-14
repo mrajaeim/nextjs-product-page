@@ -7,6 +7,9 @@ export default function NotFoundPage() {
         <h1 className={"w-full text-center"}>
             One Error Happend! Page Or Product Not Found!
         </h1>
+        <h2 className={"w-full text-center"}>
+            Please use VPN! Maybe fakestoreapi.com is down!!!
+        </h2>
         <p className={"w-full text-center"}>
             It should be noted that this app uses
             &nbsp;
