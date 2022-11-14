@@ -5,7 +5,7 @@ import usePageCarousel from "../../zustands/usePageCarousel";
 
 const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
     const {asPath} = useRouter();
-    const getVariants = usePageCarousel((state) => state.getVariants)
+    const pageCarousel = usePageCarousel()
     return (
         <div
             className={"overflow-hidden"}
@@ -20,7 +20,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
                     initial="hidden"
                     animate="enter"
                     exit="exit"
-                    variants={getVariants()}
+                    variants={pageCarousel.getVariants()}
                     transition={{type: 'linear'}}
                 >
                     {children}

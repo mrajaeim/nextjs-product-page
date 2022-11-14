@@ -16,7 +16,7 @@ export default function App({Component, pageProps}: AppProps) {
             <link rel="icon" href="https://hs3-cf.behtarino.com/static/images/behtarino-web/behtarino-logo.png"/>
             <link rel="apple-touch-icon" href="/Assets/pwa/apple-touch-icon.png"/>
         </Head>
-        <NextNProgress color="#f94467" stopDelayMs={800}/>
+        <NextNProgress color="#f94467"/>
         <AppProvider>
             <Component {...pageProps} />
         </AppProvider>
