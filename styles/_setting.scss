@@ -112,3 +112,12 @@ a {
 .text-primary{
   color: #fb4466;
 }
+
+.disabled-link{
+  pointer-events: none;
+}
+
+.disabled-btn{
+  filter: opacity(0.5);
+  pointer-events: none;
+}

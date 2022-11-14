@@ -31,8 +31,16 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                     {/*end of image*/}
                     <div className={"product-detail w-full md:w-2/3 lg:p-12 lg:pt-8 md:p-10 md:pt-6 p-8 pt-4"}>
                         <div className={"flex mb-6"}>
-                            <PrevLink href={`/products/${product.id - 1}`} name={`/products/${product.id - 1}`}/>
-                            <NextLink href={`/products/${product.id + 1}`} name={`/products/${product.id + 1}`}/>
+                            <PrevLink
+                                disabled={product.id - 1 < 1}
+                                href={`/products/${product.id - 1}`}
+                                name={`/products/${product.id - 1}`}
+                            />
+                            <NextLink
+                                disabled={product.id + 1 > 20}
+                                href={`/products/${product.id + 1}`}
+                                name={`/products/${product.id + 1}`}
+                            />
                         </div>
                         <header>
                             <div className={"product-title"}>
