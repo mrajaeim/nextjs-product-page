@@ -17,12 +17,14 @@ import Select from "rc-select";
 import Layout from "../../components/layout/Layout";
 import NextLink from "../../components/atomic/NextLink";
 import PrevLink from "../../components/atomic/PrevLink";
+import ProductPageSeo from "../../seo/ProductPageSeo";
 
 const ProductPage: React.FC<{ product: Product }> = ({product}) => {
     const location = useLocation();
     const productColors = useColorPicker(state => state.colors);
     return <>
         <Layout>
+            <ProductPageSeo product={product}/>
             <div className={"min-h-screen flex justify-center items-center content-center bg-[#f6f6f6] py-12"}>
                 <div
                     className={"product flex content-center w-11/12 bg-white rounded-2xl overflow-hidden flex-wrap shadow-[0_0_20px_0_#e3e3e3]"}
