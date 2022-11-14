@@ -49,7 +49,7 @@ const ProductPage: React.FC<{ product: Product }> = ({product}) => {
                                 </div>
 
                                 <p className={"font-semibold text-muted italic mb-2 mt-0"}>
-                                    {"GREEN".toUpperCase()}
+                                    {"SOME GOOD BRAND".toUpperCase()}
                                 </p>
                                 <p className={"font-semibold mb-2 mt-0 text-xl"}>
                                     <del className={"text-secondary mr-3"}>
