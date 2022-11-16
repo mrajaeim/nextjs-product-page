@@ -31,7 +31,6 @@ const ProductImage: React.FC<{ product: Product }> = ({product}) => {
             className={"mix-blend-darken"}
             layout={'responsive'}
             height={300} width={300}
-            placeholder='blur'
         />
         <span className={"product-image-shadow"}/>
         <div className={"absolute left-4 bottom-4 bg-white rounded z-10 pl-2 md:hidden"}>
