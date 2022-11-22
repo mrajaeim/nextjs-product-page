@@ -1,15 +1,15 @@
 import React from 'react';
-import PrevLink from "../general/links/PrevLink";
-import NextLink from "../general/links/NextLink";
+import ProductPrevLink from "./ProductPrevLink";
+import ProductNextLink from "./ProductNextLink";
 
 const ProductNavigation: React.FC<{ id: number }> = ({id}) => {
     return <div className={"flex mb-6"}>
-        <PrevLink
+        <ProductPrevLink
             disabled={id - 1 < 1}
             href={`/products/${id - 1}`}
             name={`/products/${id - 1}`}
         />
-        <NextLink
+        <ProductNextLink
             disabled={id + 1 > 20}
             href={`/products/${id + 1}`}
             name={`/products/${id + 1}`}

@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from "next/link";
-import usePageCarousel from "../../../zustands/usePageCarousel";
+import usePageCarousel from "../../zustands/usePageCarousel";
 import {mdiChevronRight} from '@mdi/js';
 import Icon from '@mdi/react';
 import {motion} from 'framer-motion';
 import clsx from 'clsx';
 
-const NextLink: React.FC<{ name: string, href: string, disabled?: boolean }> = ({name, href, disabled = false}) => {
+const ProductNextLink: React.FC<{ name: string, href: string, disabled?: boolean }> = ({name, href, disabled = false}) => {
     const pageCarousel = usePageCarousel();
     return <Link
         href={href}
@@ -21,4 +21,4 @@ const NextLink: React.FC<{ name: string, href: string, disabled?: boolean }> = (
     </Link>
 }
 
-export default NextLink;
+export default ProductNextLink;

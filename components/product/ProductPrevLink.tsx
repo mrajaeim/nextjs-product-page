@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from "next/link";
-import usePageCarousel from "../../../zustands/usePageCarousel";
+import usePageCarousel from "../../zustands/usePageCarousel";
 import Icon from "@mdi/react";
 import {mdiChevronLeft} from "@mdi/js";
 import {motion} from 'framer-motion';
 import clsx from "clsx";
 
-const PrevLink: React.FC<{ name: string, href: string, disabled?: boolean }> = ({name, href, disabled = false}) => {
+const ProductPrevLink: React.FC<{ name: string, href: string, disabled?: boolean }> = ({name, href, disabled = false}) => {
     const pageCarousel = usePageCarousel();
     return <Link
         href={href}
@@ -24,4 +24,4 @@ const PrevLink: React.FC<{ name: string, href: string, disabled?: boolean }> = (
     </Link>
 }
 
-export default PrevLink
+export default ProductPrevLink;
