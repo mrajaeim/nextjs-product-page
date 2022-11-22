@@ -6,14 +6,14 @@ const ProductHead: React.FC<{ product: Product }> = ({product}) => {
     return <header>
         <div className={"product-title"}>
             <div className={"product-rate md:w-full md:hidden mb-1"}>
-                <ProductRate rate={product?.rating?.rate} count={product?.rating?.count}/>
+                <ProductRate rating={product.rating}/>
             </div>
             <div className={'flex justify-between items-center content-center flex-wrap'}>
                 <h1 className={"mb-2 mt-0 w-full md:w-3/5 text-2xl text-secondary leading-6 font-medium"}>
                     {product.title}
                 </h1>
                 <div className={"product-rate hidden md:w-1/5 md:inline-block"}>
-                    <ProductRate rate={product?.rating?.rate} count={product?.rating?.count}/>
+                    <ProductRate rating={product.rating}/>
                 </div>
             </div>
 
