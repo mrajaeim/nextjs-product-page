@@ -3,7 +3,7 @@ import Icon from '@mdi/react'
 import {mdiContentCopy} from '@mdi/js';
 import Tooltip from "rc-tooltip";
 import {CopyToClipboard} from "react-copy-to-clipboard";
-import useLocation from "../../hooks/useLocation";
+import useLocation from "../../../hooks/useLocation";
 import {motion} from "framer-motion";
 
 const CopyLinkBtn: React.FC = () => {

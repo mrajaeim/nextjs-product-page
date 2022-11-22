@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from "next/link";
-import usePageCarousel from "../../zustands/usePageCarousel";
+import usePageCarousel from "../../../zustands/usePageCarousel";
 import {mdiChevronRight} from '@mdi/js';
 import Icon from '@mdi/react';
 import {motion} from 'framer-motion';

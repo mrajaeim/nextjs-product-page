@@ -1,7 +1,7 @@
 import React from 'react';
 import AddToCart from "./AddToCart";
-import ShareBtn from "../atomic/ShareBtn";
-import CopyLinkBtn from "../atomic/CopyLinkBtn";
+import ShareBtn from "../general/buttons/ShareBtn";
+import CopyLinkBtn from "../general/buttons/CopyLinkBtn";
 import {Product} from "../../interfaces";
 import useLocation from "../../hooks/useLocation";
 

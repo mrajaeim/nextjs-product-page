@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Preview from "../components/atomic/Preview";
+import Preview from "../components/general/Preview";
 
 export default function Home() {
     return (

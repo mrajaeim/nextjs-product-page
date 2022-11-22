@@ -1,6 +1,6 @@
 import React from 'react';
-import PrevLink from "../atomic/PrevLink";
-import NextLink from "../atomic/NextLink";
+import PrevLink from "../general/links/PrevLink";
+import NextLink from "../general/links/NextLink";
 
 const ProductNavigation: React.FC<{ id: number }> = ({id}) => {
     return <div className={"flex mb-6"}>
