@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import {FAKE_STORE_API} from "../config";
 
 export default function NotFoundPage() {
   return (
