@@ -1,9 +1,9 @@
 import React from 'react';
 import ProductPrevLink from "./ProductPrevLink";
 import ProductNextLink from "./ProductNextLink";
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 
-const ProductNavigation: React.FC<Pick<Product,"id">> = ({id}) => {
+const ProductNavigation: React.FC<Pick<ProductDataIFace,"id">> = ({id}) => {
     return <div className={"flex mb-6"}>
         <ProductPrevLink
             disabled={id - 1 < 1}

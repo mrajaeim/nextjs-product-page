@@ -1,9 +1,9 @@
 import React from 'react';
 import Rate from 'rc-rate';
 import Tooltip from "rc-tooltip";
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 
-const ProductRate: React.FC<Pick<Product,"rating">> = ({rating}) => {
+const ProductRate: React.FC<Pick<ProductDataIFace,"rating">> = ({rating}) => {
     return rating.rate ? <Tooltip
         placement="bottom"
         trigger={['hover']}

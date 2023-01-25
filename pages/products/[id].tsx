@@ -1,8 +1,6 @@
 import React from 'react';
 import {GetServerSideProps} from "next";
-import axios from "axios";
-import {FAKE_STORE_API} from "../../config";
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 import ProductImage from "../../components/product/ProductImage";
 import Layout from "../../components/layout/Layout";
 import ProductPageSeo from "../../seo/ProductPageSeo";
@@ -11,8 +9,9 @@ import ProductHead from "../../components/product/ProductHead";
 import ProductOptions from "../../components/product/ProductOptions";
 import ProductFooter from "../../components/product/ProductFooter";
 import ProductDescription from "../../components/product/ProductDescription";
+import {getProduct} from '../../networks/products'
 
-const ProductPage: React.FC<{ product: Product }> = ({product}) => {
+const ProductPage: React.FC<{ product: ProductDataIFace }> = ({product}) => {
     return <>
         <Layout>
             <ProductPageSeo product={product}/>
@@ -44,14 +43,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     try {
         let id = Number(context.query['id']);
         // validate id
-        if (!(Number.isInteger(id) && !Number.isNaN(id) && id > 0))
+        if (!Number.isInteger(id) || id < 1)
             throw "id is not valid"
 
-        let {data} = await axios.get(FAKE_STORE_API(id));
-        // check is data is valid or not
-        if (!('title' in data))
-            throw "data is not valid";
-
+        const data = await getProduct({id})
+        
         return {
             props: {product: data}
         }

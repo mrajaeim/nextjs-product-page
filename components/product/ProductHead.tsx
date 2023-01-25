@@ -1,8 +1,8 @@
 import React from 'react';
 import ProductRate from "./ProductRate";
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 
-const ProductHead: React.FC<{ product: Product }> = ({product}) => {
+const ProductHead: React.FC<{ product: ProductDataIFace }> = ({product}) => {
     return <header>
         <div className={"product-title"}>
             <div className={"product-rate md:w-full md:hidden mb-1"}>

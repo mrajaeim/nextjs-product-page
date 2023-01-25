@@ -1,8 +1,8 @@
 import React from 'react';
 import {NextSeo} from "next-seo";
-import {Product} from "../interfaces";
+import {ProductDataIFace} from "../interfaces";
 
-const ProductPageSeo: React.FC<{ product: Product }> = ({product}) => {
+const ProductPageSeo: React.FC<{ product: ProductDataIFace }> = ({product}) => {
     return <NextSeo
         title={product.title}
         description={product.description}

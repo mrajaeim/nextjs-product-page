@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import useColorPicker from "../../zustands/useColorPicker";
 import Image from "next/image";
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 import {motion, animate, useMotionValue, useTransform} from "framer-motion";
 import ProductOption from "./ProductOption";
 import ColorPicker from "./ProductColor";
 
-const ProductImage: React.FC<{ product: Product }> = ({product}) => {
+const ProductImage: React.FC<{ product: ProductDataIFace }> = ({product}) => {
     const colorPicker = useColorPicker();
     const currentColor = useMotionValue(0);
     useEffect(() => {

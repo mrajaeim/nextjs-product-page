@@ -1,7 +1,7 @@
 import React from 'react';
-import {Product} from "../../interfaces";
+import {ProductDataIFace} from "../../interfaces";
 
-const ProductDescription: React.FC<Pick<Product,"description">> = ({description}) => {
+const ProductDescription: React.FC<Pick<ProductDataIFace,"description">> = ({description}) => {
     return <>
         <h2 className={"text-secondary text-sm font-semibold"}>
             DESCRIPTION
