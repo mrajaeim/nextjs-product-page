@@ -46,10 +46,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         if (!Number.isInteger(id) || id < 1)
             throw "id is not valid"
 
-        const data = await getProduct({id})
+        const product = await getProduct({id})
         
         return {
-            props: {product: data}
+            props: {product}
         }
     } catch (e) {
         return {
